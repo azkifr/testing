@@ -23,6 +23,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform _towerUIParent;
     [SerializeField] private GameObject _towerUIPrefab;
     [SerializeField] private AngelTower[] _towerPrefabs;
+    private List<AngelTower> _spawnedTowers = new List<AngelTower> ();
 
     private void Start()
     {
@@ -35,12 +36,14 @@ public class LevelManager : MonoBehaviour
         foreach (AngelTower tower in _towerPrefabs)
         {
             GameObject newTowerUIObj = Instantiate(_towerUIPrefab.gameObject, _towerUIParent);
-
             AngelTowerUI newTowerUI = newTowerUIObj.GetComponent<AngelTowerUI>();
-
             newTowerUI.SetTowerPrefab(tower);
-
             newTowerUI.transform.name = tower.name;
         }
+    }
+    
+    public void RegisterSpawnedTower (AngelTower tower)
+    {
+        _spawnedTowers.Add (tower);
     }
 }
