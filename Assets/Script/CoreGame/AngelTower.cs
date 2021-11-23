@@ -6,7 +6,7 @@ using UnityEngine;
 public class AngelTower : MonoBehaviour
 {
     // Tower Component
-    //[SerializeField] private SpriteRenderer _towerPlace;
+    [SerializeField] private SpriteRenderer _towerPlace;
     [SerializeField] private SpriteRenderer _towerHead;
 
     // Tower Properties
@@ -17,12 +17,8 @@ public class AngelTower : MonoBehaviour
     [SerializeField] private float _bulletSplashRadius = 0f;
 
     // Fungsi yang digunakan untuk mengambil sprite pada Tower Head
-
     public Sprite GetTowerHeadIcon()
-
     {
-
         return _towerHead.sprite;
-
     }
 }
