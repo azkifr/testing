@@ -31,6 +31,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_EdgeRadius
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2884682384478926533, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -99,6 +107,10 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 3786136701893022943, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -146,6 +158,22 @@ PrefabInstance:
     - target: {fileID: 8813056793285879201, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SpriteSortPoint
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
