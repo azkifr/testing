@@ -763,6 +763,22 @@ MonoBehaviour:
   _towerUIPrefab: {fileID: 3115916758120603494, guid: 9c8679a192aba5545b5e5f408bcca833, type: 3}
   _towerPrefabs:
   - {fileID: 2349922557388175375, guid: 45cdab48b39dc7a46805402f5679663f, type: 3}
+  _enemyPrefabs:
+  - {fileID: 5052617015794153124, guid: 491157e87be632e408223617c7692ba2, type: 3}
+  _enemyPaths:
+  - {fileID: 2012333948}
+  - {fileID: 158009845}
+  - {fileID: 665489078}
+  - {fileID: 1580588004}
+  - {fileID: 668956873}
+  - {fileID: 1838829794}
+  - {fileID: 1106508439}
+  - {fileID: 1111180613}
+  - {fileID: 932812156}
+  - {fileID: 449211202}
+  - {fileID: 254638086}
+  - {fileID: 1549068561}
+  _spawnDelay: 5
 --- !u!1 &714050405
 GameObject:
   m_ObjectHideFlags: 0
