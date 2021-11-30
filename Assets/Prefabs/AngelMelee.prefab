@@ -135,6 +135,26 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _bulletSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _bulletPrefab
+      value: 
+      objectReference: {fileID: 1243299521979308977, guid: a563a0c10205c5044bc5a538ec4bc646, type: 3}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDistance
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _bulletSplashRadius
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6456542886603153295, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
