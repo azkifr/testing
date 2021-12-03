@@ -17,9 +17,30 @@ public class AngelTower : MonoBehaviour
     [SerializeField] private float _bulletSplashRadius = 0f;
     [SerializeField] private Attack _bulletPrefab;
 
+    [SerializeField] private int _maxHealth = 1;
+    [SerializeField] private SpriteRenderer _healthBar;
+    [SerializeField] private SpriteRenderer _healthFill;
+    private int _currentHealth;
+
     private float _runningShootDelay;
     private Enemy _targetEnemy;
     private Quaternion _targetRotation;
+
+    private void OnEnable()
+    {
+        _currentHealth = _maxHealth;
+
+        _healthFill.size = _healthBar.size;
+    }
+
+    public void ReduceAngelHealth(int damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
 
     // Mengecek musuh terdekat
     public void CheckNearestEnemy(List<Enemy> enemies)
@@ -60,6 +81,11 @@ public class AngelTower : MonoBehaviour
     // Menembak musuh yang telah disimpan sebagai target
     public void ShootTarget()
     {
+        if (!gameObject.activeSelf)
+        {
+
+            return;
+        }
         if (_targetEnemy == null)
         {
 

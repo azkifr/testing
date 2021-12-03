@@ -32,7 +32,23 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Offset.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
@@ -136,8 +152,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _maxHealth
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _shootDelay
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootPower
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5879556095571863901, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _bulletSpeed
@@ -167,9 +191,17 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7564006145171119723, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7582165273243552367, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335578919914251810, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8770655857274979890, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh

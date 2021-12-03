@@ -7,6 +7,7 @@ public class AnglePlacement : MonoBehaviour
     private AngelTower _placedTower;
     private void OnTriggerEnter2D (Collider2D collision)
     {
+        
         if (_placedTower != null)
         {
             return;

@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
     private List<AngelTower> _spawnedTowers = new List<AngelTower> ();
     private List<Enemy> _spawnedEnemies = new List<Enemy>();
     private List<Attack> _spawnedBullets = new List<Attack>();
+    private List<EnemyAttack> _spawnedEnemyBullets = new List<EnemyAttack>();
     private float _runningSpawnDelay;
 
     private void Start()
@@ -64,24 +65,28 @@ public class LevelManager : MonoBehaviour
             {
                 continue;
             }
-
-            // Kenapa nilainya 0.1? Karena untuk lebih mentoleransi perbedaan posisi,
-            // akan terlalu sulit jika perbedaan posisinya harus 0 atau sama persis
-            if (Vector2.Distance(enemy.transform.position, enemy.TargetPosition) < 0.1f)
-            { 
-                enemy.SetCurrentPathIndex(enemy.CurrentPathIndex + 1);
-                if (enemy.CurrentPathIndex < _enemyPaths.Length)
+            if (enemy.stopMove == false)
+            {
+                // Kenapa nilainya 0.1? Karena untuk lebih mentoleransi perbedaan posisi,
+                // akan terlalu sulit jika perbedaan posisinya harus 0 atau sama persis
+                if (Vector2.Distance(enemy.transform.position, enemy.TargetPosition) < 0.1f)
                 {
-                    enemy.SetTargetPosition(_enemyPaths[enemy.CurrentPathIndex].position);
+                    enemy.SetCurrentPathIndex(enemy.CurrentPathIndex + 1);
+                    if (enemy.CurrentPathIndex < _enemyPaths.Length)
+                    {
+                        enemy.SetTargetPosition(_enemyPaths[enemy.CurrentPathIndex].position);
+                    }
+                    else
+                    {
+                        enemy.gameObject.SetActive(false);
+                    }
                 }
                 else
                 {
-                    enemy.gameObject.SetActive(false);
+                    enemy.MoveToTarget();
                 }
-            }
-            else
-            {
-                enemy.MoveToTarget();
+                enemy.CheckNearestAngel(_spawnedTowers);
+                enemy.ShootTarget();
             }
         }
     }
@@ -126,6 +131,8 @@ public class LevelManager : MonoBehaviour
         newEnemy.SetCurrentPathIndex(1);
         newEnemy.gameObject.SetActive(true);
     }
+
+    //Tower Attack
     public Attack GetBulletFromPool(Attack prefab)
     {
         GameObject newBulletObj = _spawnedBullets.Find(
@@ -144,7 +151,28 @@ public class LevelManager : MonoBehaviour
         }
 
         return newBullet;
+    }
+    
 
+    //Enemy Attack
+    public EnemyAttack GetEnemyBulletFromPool(EnemyAttack prefab)
+    {
+        GameObject newBulletObj = _spawnedEnemyBullets.Find(
+            b => !b.gameObject.activeSelf && b.name.Contains(prefab.name)
+        )?.gameObject;
+
+        if (newBulletObj == null)
+        {
+            newBulletObj = Instantiate(prefab.gameObject);
+        }
+
+        EnemyAttack newBullet = newBulletObj.GetComponent<EnemyAttack>();
+        if (!_spawnedEnemyBullets.Contains(newBullet))
+        {
+            _spawnedEnemyBullets.Add(newBullet);
+        }
+
+        return newBullet;
     }
 
     public void ExplodeAt(Vector2 point, float radius, int damage)
