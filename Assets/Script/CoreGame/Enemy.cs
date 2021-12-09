@@ -162,14 +162,14 @@ public class Enemy : MonoBehaviour
         if (collision.gameObject.layer == 8)
         {
             stopMove = true;
-            Debug.Log("Collide");
+            //Debug.Log("Collide");
         }
     }
     void Update()
     {
         if (_targetAngel == null)
         {
-            Debug.Log("EnemyDed");
+            //Debug.Log("EnemyDed");
         }
     }
 }

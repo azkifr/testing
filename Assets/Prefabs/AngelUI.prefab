@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 3681588999746024934}
   - component: {fileID: 4508064470754814040}
   - component: {fileID: 6193109975896219688}
-  - component: {fileID: 3420615188424385720}
+  - component: {fileID: 4475610447962313552}
   m_Layer: 5
   m_Name: AngelUI
   m_TagString: Untagged
@@ -152,7 +152,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3420615188424385720
+--- !u!114 &4475610447962313552
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3115916758120603494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0947b9b2b89cdf94ca7a9073a5cf3708, type: 3}
+  m_Script: {fileID: 11500000, guid: 18a7aaaf9c41c0c4bb9b5356bc27b473, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _towerIcon: {fileID: 5404938269659408429}
+  _angelIcon: {fileID: 5404938269659408429}

@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Transform[] _enemyPaths;
     [SerializeField] private float _spawnDelay = 5f;
 
-    private List<AngelTower> _spawnedTowers = new List<AngelTower> ();
+    private List<AngelTower> _spawnedTowers = new List<AngelTower>();
     private List<Enemy> _spawnedEnemies = new List<Enemy>();
     private List<Attack> _spawnedBullets = new List<Attack>();
     private List<EnemyAttack> _spawnedEnemyBullets = new List<EnemyAttack>();
@@ -56,7 +56,7 @@ public class LevelManager : MonoBehaviour
         {
             tower.CheckNearestEnemy(_spawnedEnemies);
             tower.SeekTarget();
-            tower.ShootTarget();
+            //tower.ShootTarget();
         }
 
         foreach (Enemy enemy in _spawnedEnemies)
@@ -86,7 +86,7 @@ public class LevelManager : MonoBehaviour
                     enemy.MoveToTarget();
                 }
                 enemy.CheckNearestAngel(_spawnedTowers);
-                enemy.ShootTarget();
+                //enemy.ShootTarget();
             }
         }
     }

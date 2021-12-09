@@ -127,6 +127,7 @@ public class AngelTower : MonoBehaviour
         //_targetRotation = Quaternion.Euler(new Vector3(0f, 0f, targetAngle - 90f));
         //_towerHead.transform.rotation = Quaternion.RotateTowards(_towerHead.transform.rotation, _targetRotation, Time.deltaTime * 180f);
     }
+
     public Vector2? PlacePosition { get; private set; }
 
     // Fungsi yang digunakan untuk mengambil sprite pada Tower Head

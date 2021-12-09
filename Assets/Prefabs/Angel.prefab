@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 5879556095571863901}
   - component: {fileID: 4676995912288696101}
   - component: {fileID: 2568059376615562682}
+  - component: {fileID: 6927434625139846755}
   m_Layer: 8
   m_Name: Angel
-  m_TagString: Untagged
+  m_TagString: Fighter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +97,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 823363670511981235}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4761ff2dd4fe40148b9d9d6c823c3695, type: 3}
   m_Name: 
@@ -159,6 +160,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &6927434625139846755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 823363670511981235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c4069865c34b44cba50f09203aa5f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _towerPlace: {fileID: 9170917107397390420}
+  _towerHead: {fileID: 9053121741642120355}
+  _shootPower: 1
+  _shootDistance: 1
+  _shootDelay: 5
+  _bulletSpeed: 1
+  _bulletSplashRadius: 0
 --- !u!1 &5736631075136547958
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,12 @@ TagManager:
   serializedVersion: 2
   tags:
   - gamemusic
+  - MeleeTile
+  - RangeTile
+  - Melee
+  - Range
+  - Undead
+  - Fighter
   layers:
   - Default
   - TransparentFX
@@ -15,7 +21,7 @@ TagManager:
   - DraggingTower
   - Container
   - Angel
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -44,4 +50,7 @@ TagManager:
     locked: 0
   - name: Angel
     uniqueID: 3642044141
+    locked: 0
+  - name: Enemy
+    uniqueID: 2964896027
     locked: 0
