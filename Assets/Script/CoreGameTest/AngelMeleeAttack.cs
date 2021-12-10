@@ -25,7 +25,7 @@ public class AngelMeleeAttack : MonoBehaviour
     private int _attackPower=1;
 
     //Swing
-    public float _attackDelay = 0.7f;
+    public float _attackDelay = 1.0f;
     private float lastSwing;
 
     private Undead _targetUndead;
