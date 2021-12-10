@@ -103,16 +103,8 @@ public class MapManager : MonoBehaviour
 
             else
             {
-                if (undead.isStop == true)
-                {
-                    //Debug.Log("Stop");
-                    undead.transform.Translate(new Vector3(0, 0, 0));
-
-                }
-                else
-                {
-                    undead.MoveToTarget();
-                }
+                //Debug.Log(undead.isStop);
+                undead.MoveToTarget();
             }
         }
     }
@@ -137,10 +129,9 @@ public class MapManager : MonoBehaviour
         {
             GameObject newAngelUIObj = Instantiate(_angelUIPrefab.gameObject, _angelUIParent);
             AngelUI newAngelUI = newAngelUIObj.GetComponent<AngelUI>();
-
+ 
             newAngelUI.SetAngelPrefab(angel);
             newAngelUI.transform.name = angel.name;
-            angel.EnableAttack = false;
         }
     }
 
@@ -149,7 +140,6 @@ public class MapManager : MonoBehaviour
     {
         _totalGold -= angel._angelCost;
         _spawnedAngels.Add(angel);
-        angel.EnableAttack = true;
         //angel.AttackScript.enabled = true;
         //GameObject.Find("Sword").GetComponent<AngelMeleeAttack>().enabled = true;
     }

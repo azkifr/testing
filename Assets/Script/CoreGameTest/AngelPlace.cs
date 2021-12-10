@@ -9,6 +9,7 @@ public class AngelPlace : MonoBehaviour
     // Fungsi yang terpanggil sekali ketika ada object Rigidbody yang menyentuh area collider
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (_placedAngel != null)
         {
             return;
@@ -17,7 +18,6 @@ public class AngelPlace : MonoBehaviour
         Angel angel = collision.GetComponent<Angel>();
         if (angel != null)
         {
-            
             if (collision.tag == "Range"&&gameObject.tag=="RangeTile")//Tile khusus range
             {
                 //Debug.Log("Range");

@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class AngelMeleeAttack : MonoBehaviour
 {
+    private static AngelMeleeAttack _instance = null;
+
+    public static AngelMeleeAttack Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<AngelMeleeAttack>();
+            }
+            return _instance;
+        }
+    }
     public ContactFilter2D filter;
     private CircleCollider2D circleCollider2D;
     private Collider2D[] hits = new Collider2D[10];
@@ -12,37 +25,41 @@ public class AngelMeleeAttack : MonoBehaviour
     private int _attackPower=1;
 
     //Swing
-    private float _attackDelay = 0.05f;
+    public float _attackDelay = 0.05f;
     private float lastSwing;
 
     private Undead _targetUndead;
-    
+    public bool StopAttack;
+    private AngelUI angelUI;
 
     private void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        
         //angel = GetComponent<Angel>();
     }
     
     private void Update()
     {
+        
         //Collision
         circleCollider2D.OverlapCollider(filter, hits);
         for (int i = 0; i < hits.Length; i++)
         {
-            //if (angel.EnableAttack==true)
-            //{
-                //EnableAttackRange(angel.EnableAttack);
-                if (hits[i] == null)
-                {
-                    continue;
-                }
-                FindClosestUndead();
-                OnCollide(hits[i]);
+            if (hits[i] == null)
+            {
+                continue;
+            }
+            
+            if (StopAttack == true)
+            {
+                continue;
+            }
+            FindClosestUndead();
+            OnCollide(hits[i]);
                 //clean up array manual
-                hits[i] = null;
-            //}
+            hits[i] = null;
         }
        
     }
@@ -81,7 +98,7 @@ public class AngelMeleeAttack : MonoBehaviour
             {
                 //Debug.Log("Attack");
                 lastSwing = Time.time + _attackDelay;
-                collision.SendMessage("ReduceUndeadHealth", _attackPower);
+                //collision.SendMessage("ReduceUndeadHealth", _attackPower);
             }
             else
             {

@@ -88,6 +88,8 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  _attackDelay: 0.01
+  StopAttack: 0
 --- !u!1001 &8143910019503984978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,11 +127,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Size.x
-      value: 1.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Size.y
-      value: 1.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Offset.x
@@ -141,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2568059376615562682, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_EdgeRadius
@@ -295,6 +297,10 @@ PrefabInstance:
       propertyPath: _angelPlace
       value: 
       objectReference: {fileID: 1027207222129516806}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _angelHealth
+      value: 1000
+      objectReference: {fileID: 0}
     - target: {fileID: 7424712162491610405, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_SortingOrder
       value: 0

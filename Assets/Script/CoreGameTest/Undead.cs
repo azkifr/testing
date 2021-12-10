@@ -4,6 +4,20 @@ using UnityEngine;
 
 public class Undead : MonoBehaviour
 {
+    private static Undead _instance = null;
+
+    public static Undead Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                _instance = FindObjectOfType<Undead>();
+            }
+            return _instance;
+
+        }
+    }
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private float _moveSpeed = 0.5f;
     [SerializeField] private SpriteRenderer _healthBar;
@@ -30,6 +44,10 @@ public class Undead : MonoBehaviour
 
     public void MoveToTarget()
     {
+        if (isStop == true)
+        {
+            return;
+        }
         transform.position = Vector3.MoveTowards(transform.position, TargetPosition, _moveSpeed * Time.deltaTime);
     }
 

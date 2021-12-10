@@ -16,7 +16,6 @@ public class Angel : MonoBehaviour
     [SerializeField] private float _bulletSplashRadius = 0f;
     [SerializeField] private int _angelHealth = 1;
     [SerializeField] public double _angelCost = 10;
-    public bool EnableAttack=false ;
 
     //public GameObject AttackScript = GameObject.Find("AngelMeleeAttack");
     // Digunakan untuk menyimpan posisi yang akan ditempati selama tower di drag
@@ -49,6 +48,7 @@ public class Angel : MonoBehaviour
         _angelHealth -= damage;
         if (_angelHealth <= 0)
         {
+            Debug.Log("RIP");
             gameObject.SetActive(false);
         }
     }

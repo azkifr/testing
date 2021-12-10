@@ -309,6 +309,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileContainerMelee (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
+      objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -557,6 +561,10 @@ PrefabInstance:
     - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_Name
       value: TileContainerMelee (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
       objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
@@ -833,6 +841,10 @@ PrefabInstance:
     - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_Name
       value: TileContainerMelee (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
       objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
@@ -1275,7 +1287,7 @@ MonoBehaviour:
   - {fileID: 646498277}
   - {fileID: 306670961}
   _spawnDelay: 5
-  EnemyCount: 10
+  EnemyCount: 1
 --- !u!212 &744153106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1891,6 +1903,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileContainerMelee (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
+      objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -2118,6 +2134,10 @@ PrefabInstance:
     - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_Name
       value: TileContainerMelee (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
       objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
@@ -2914,6 +2934,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileContainerMelee (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
+      objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -3425,6 +3449,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileContainerMelee (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
+      objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -3546,6 +3574,10 @@ PrefabInstance:
     - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_Name
       value: TileContainerMelee
+      objectReference: {fileID: 0}
+    - target: {fileID: 1443544067856324618, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
+      propertyPath: m_TagString
+      value: MeleeTile
       objectReference: {fileID: 0}
     - target: {fileID: 2291478731601612665, guid: ecd71be7c5d866f458bf2b844755fa45, type: 3}
       propertyPath: m_RootOrder

@@ -6,10 +6,12 @@ using UnityEngine.EventSystems;
 
 public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    
     [SerializeField] private Image _angelIcon;
 
     private Angel _angelPrefab;
     private Angel _currentSpawnedAngel;
+    public bool StopAttack;
 
     public void SetAngelPrefab(Angel angel)
     {
@@ -36,7 +38,7 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         mousePosition.z = -mainCamera.transform.position.z;
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         _currentSpawnedAngel.transform.position = targetPosition;
-        _currentSpawnedAngel.EnableAttack = false;
+        AngelMeleeAttack.Instance.StopAttack = true;
     }
 
     // Implementasi dari Interface IEndDragHandler
@@ -55,6 +57,7 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
             _currentSpawnedAngel.ToggleOrderInLayer(false);
             MapManager.Instance.RegisterSpawnedAngel(_currentSpawnedAngel);
             _currentSpawnedAngel = null;
+            AngelMeleeAttack.Instance.StopAttack = false;
         }
     }
 
