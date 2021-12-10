@@ -25,7 +25,7 @@ public class AngelMeleeAttack : MonoBehaviour
     private int _attackPower=1;
 
     //Swing
-    public float _attackDelay = 0.05f;
+    public float _attackDelay = 0.7f;
     private float lastSwing;
 
     private Undead _targetUndead;
@@ -76,17 +76,6 @@ public class AngelMeleeAttack : MonoBehaviour
         //    }
         //}
     }
-    public void EnableAttackRange(bool cond)
-    {
-        if (cond == false)
-        {
-            gameObject.SetActive(false);
-        }
-        else
-        {
-            gameObject.SetActive(true);
-        }
-    }
 
     private void OnCollide(Collider2D collision)
     {
@@ -96,9 +85,10 @@ public class AngelMeleeAttack : MonoBehaviour
             //Debug.Log("Hit");
             if (Time.time >= lastSwing)
             {
-                //Debug.Log("Attack");
+                Debug.Log("Angel Attack");
                 lastSwing = Time.time + _attackDelay;
-                //collision.SendMessage("ReduceUndeadHealth", _attackPower);
+                _targetUndead.ReduceUndeadHealth(_attackPower);         
+                //Debug.Log(_targetUndead._currentHealth);
             }
             else
             {

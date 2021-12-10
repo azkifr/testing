@@ -299,7 +299,7 @@ PrefabInstance:
       objectReference: {fileID: 1027207222129516806}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHealth
-      value: 1000
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7424712162491610405, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_SortingOrder

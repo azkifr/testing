@@ -104,7 +104,16 @@ public class MapManager : MonoBehaviour
             else
             {
                 //Debug.Log(undead.isStop);
-                undead.MoveToTarget();
+                if (undead.isStop == true)
+                {
+                    //Debug.Log("Stop");
+                    undead.transform.Translate(new Vector3(0, 0, 0));
+
+                }
+                else
+                {
+                    undead.MoveToTarget();
+                }
             }
         }
     }

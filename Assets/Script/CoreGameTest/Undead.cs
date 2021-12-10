@@ -4,26 +4,26 @@ using UnityEngine;
 
 public class Undead : MonoBehaviour
 {
-    private static Undead _instance = null;
+    //private static Undead _instance = null;
 
-    public static Undead Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<Undead>();
-            }
-            return _instance;
+    //public static Undead Instance
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = FindObjectOfType<Undead>();
+    //        }
+    //        return _instance;
 
-        }
-    }
+    //    }
+    //}
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private float _moveSpeed = 0.5f;
     [SerializeField] private SpriteRenderer _healthBar;
     [SerializeField] private SpriteRenderer _healthFill;
 
-    private int _currentHealth;
+    public int _currentHealth;
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
 
@@ -44,11 +44,7 @@ public class Undead : MonoBehaviour
 
     public void MoveToTarget()
     {
-        if (isStop == true)
-        {
-            return;
-        }
-        transform.position = Vector3.MoveTowards(transform.position, TargetPosition, _moveSpeed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, TargetPosition, _moveSpeed * Time.deltaTime);
     }
 
     public void SetTargetPosition(Vector3 targetPosition)
@@ -81,6 +77,7 @@ public class Undead : MonoBehaviour
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         {
+            
             gameObject.SetActive(false);
         }
     }

@@ -4,6 +4,19 @@ using UnityEngine;
 
 public class Angel : MonoBehaviour
 {
+    //private static Angel _instance = null;
+
+    //public static Angel Instance
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = FindObjectOfType<MapManager>();
+    //        }
+    //        return _instance;
+    //    }
+    //}
     // Tower Component
     [SerializeField] private SpriteRenderer _angelPlace;
     [SerializeField] private SpriteRenderer _angelHead;
@@ -20,6 +33,7 @@ public class Angel : MonoBehaviour
     //public GameObject AttackScript = GameObject.Find("AngelMeleeAttack");
     // Digunakan untuk menyimpan posisi yang akan ditempati selama tower di drag
     public Vector2? PlacePosition { get; private set; }
+    public bool IsDead;
 
     public void SetPlacePosition(Vector2? newPosition)
     {
@@ -50,6 +64,7 @@ public class Angel : MonoBehaviour
         {
             Debug.Log("RIP");
             gameObject.SetActive(false);
+            
         }
     }
 }

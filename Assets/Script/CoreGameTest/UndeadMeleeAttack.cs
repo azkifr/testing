@@ -27,7 +27,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     //Attack
     private int _attackPower = 1;
     //Swing
-    private float _attackDelay = 1.0f;
+    private float _attackDelay = 0.5f;
     private float lastSwing;
 
     private Angel _targetAngel;
@@ -70,17 +70,17 @@ public class UndeadMeleeAttack : MonoBehaviour
        
         if (collision.tag == "Melee")
         {
-            Debug.Log(collision.name);
-            Undead.Instance.isStop = true;
+            //Debug.Log(collision.name);
+            _currentUndead.isStop = true;
             if (Time.time >= lastSwing)
             {
-                Debug.Log("Hit");
+                Debug.Log("Undead Hit");
                 lastSwing = Time.time + _attackDelay;
-                collision.SendMessage("ReduceAngelHealth", _attackPower);
+                _targetAngel.ReduceAngelHealth(_attackPower);
                 if (collision.gameObject.activeSelf==false)
                 {
                     Debug.Log("AngelDead");
-                    Undead.Instance.isStop = false;
+                    _currentUndead.isStop = false;
                 }
             }
             else
