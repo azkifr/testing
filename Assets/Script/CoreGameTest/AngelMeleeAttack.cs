@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class AngelMeleeAttack : MonoBehaviour
 {
-    private static AngelMeleeAttack _instance = null;
+    //private static AngelMeleeAttack _instance = null;
 
-    public static AngelMeleeAttack Instance
-    {
-        get
-        {
-            if (_instance == null)
-            {
-                _instance = FindObjectOfType<AngelMeleeAttack>();
-            }
-            return _instance;
-        }
-    }
+    //public static AngelMeleeAttack Instance
+    //{
+    //    get
+    //    {
+    //        if (_instance == null)
+    //        {
+    //            _instance = FindObjectOfType<AngelMeleeAttack>();
+    //        }
+    //        return _instance;
+    //    }
+    //}
     public ContactFilter2D filter;
     private CircleCollider2D circleCollider2D;
     private Collider2D[] hits = new Collider2D[10];
@@ -29,20 +29,16 @@ public class AngelMeleeAttack : MonoBehaviour
     private float lastSwing;
 
     private Undead _targetUndead;
-    public bool StopAttack;
-    private AngelUI angelUI;
 
     private void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        
-        //angel = GetComponent<Angel>();
     }
     
     private void Update()
     {
-        
+        //_angelUI = angelUI.GetComponent<AngelUI>();
         //Collision
         circleCollider2D.OverlapCollider(filter, hits);
         for (int i = 0; i < hits.Length; i++)
@@ -51,11 +47,12 @@ public class AngelMeleeAttack : MonoBehaviour
             {
                 continue;
             }
-            
-            if (StopAttack == true)
-            {
-                continue;
-            }
+            //Debug.Log(_angelUI.StopAttack);
+            //if (_angelUI.StopAttack==true)
+            //{
+            //    Debug.Log("STOP ATTACK ANGEL SCRIPT");
+            //    continue;
+            //}
             FindClosestUndead();
             OnCollide(hits[i]);
                 //clean up array manual

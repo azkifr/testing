@@ -30,8 +30,123 @@ public class Angel : MonoBehaviour
     [SerializeField] private int _angelHealth = 1;
     [SerializeField] public double _angelCost = 10;
 
-    //public GameObject AttackScript = GameObject.Find("AngelMeleeAttack");
-    // Digunakan untuk menyimpan posisi yang akan ditempati selama tower di drag
+    [SerializeField] public GameObject Range;
+    [SerializeField] private AngelRangeAttack _rangePrefab;
+
+    //Script angel range
+
+    private float _runningShootDelay;
+    private Undead _targetUndead;
+    private Quaternion _targetRotation;
+
+    // Mengecek musuh terdekat
+    public void CheckNearestUndead(List<Undead> undeads)
+    {
+        //Debug.Log("Checking");
+        if (_targetUndead != null)
+        {
+            if (!_targetUndead.gameObject.activeSelf || Vector3.Distance(transform.position, _targetUndead.transform.position) > _shootDistance)
+            {
+
+                _targetUndead = null;
+
+            }
+            else
+            {
+
+                return;
+
+            }
+        }
+        //Debug.Log("Checking - 2");
+
+        float nearestDistance = Mathf.Infinity;
+        Undead nearestUndead = null;
+
+        foreach (Undead undead in undeads)
+        {
+            //Debug.Log("Checking - 3");
+            float distance = Vector3.Distance(transform.position, undead.transform.position);
+            if (distance > _shootDistance)
+            {
+                //Debug.Log("Check - 4.1");
+                //Debug.Log(distance);
+                continue;
+
+            }
+            if (distance < nearestDistance)
+            {
+                //Debug.Log("Check - 4.2");
+                nearestDistance = distance;
+
+                nearestUndead = undead;
+            }
+        }
+
+        _targetUndead = nearestUndead;
+        //Debug.Log(_targetUndead.name);
+    }
+
+
+
+    // Menembak musuh yang telah disimpan sebagai target
+    public void ShootTarget()
+    {
+        //Debug.Log("Shoot");
+        if (_targetUndead == null)
+        {
+
+            return;
+
+        }
+
+        _runningShootDelay -= Time.unscaledDeltaTime;
+        if (_runningShootDelay <= 0f)
+        {
+            //bool headHasAimed = Mathf.Abs(_angelHead.transform.rotation.eulerAngles.z - _targetRotation.eulerAngles.z) < 10f;
+            //if (!headHasAimed)
+            //{
+
+            //    return;
+
+            //}
+
+            AngelRangeAttack bullet = MapManager.Instance.GetArrowFromPool(_rangePrefab);
+
+            bullet.transform.position = transform.position;
+            bullet.SetProperties(_shootPower, _bulletSpeed, _bulletSplashRadius);
+            bullet.SetTargetUndead(_targetUndead);
+            //Debug.Log(_targetUndead.name);
+            bullet.gameObject.SetActive(true);
+
+            _runningShootDelay = _shootDelay;
+
+        }
+
+    }
+
+
+
+    // Membuat tower selalu melihat ke arah musuh
+
+    public void SeekTarget()
+    {
+        if (_targetUndead == null)
+        {
+
+            return;
+
+        }
+
+        Vector3 direction = _targetUndead.transform.position - transform.position;
+        float targetAngle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        _targetRotation = Quaternion.Euler(new Vector3(0f, 0f, targetAngle - 90f));
+
+
+        //_angelHead.transform.rotation = Quaternion.RotateTowards(_angelHead.transform.rotation, _targetRotation, Time.deltaTime * 180f);
+    }
+
+    //=======
     public Vector2? PlacePosition { get; private set; }
     public bool IsDead;
 

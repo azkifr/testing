@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AttackRange
       objectReference: {fileID: 0}
+    - target: {fileID: 4088080391693334232, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
+      propertyPath: m_Radius
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4762922310980307257, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -89,7 +93,6 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _attackDelay: 0.01
-  StopAttack: 0
 --- !u!1001 &8143910019503984978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -286,6 +289,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: Range
+      value: 
+      objectReference: {fileID: 648496973077437005}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelCost
       value: 1
       objectReference: {fileID: 0}
@@ -300,6 +307,10 @@ PrefabInstance:
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHealth
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDistance
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7424712162491610405, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_SortingOrder

@@ -15,6 +15,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2143795171875251453, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4088080391693334232, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
       propertyPath: m_Radius
       value: 4
@@ -94,7 +98,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 3.5
 --- !u!114 &2161636142226197870
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,6 +232,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
+      propertyPath: Range
+      value: 
+      objectReference: {fileID: 6726370074543206481}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _maxHealth
       value: 2

@@ -22,7 +22,10 @@ public class Undead : MonoBehaviour
     [SerializeField] private float _moveSpeed = 0.5f;
     [SerializeField] private SpriteRenderer _healthBar;
     [SerializeField] private SpriteRenderer _healthFill;
+    [SerializeField] private GameObject Range;
 
+    private Angel _targetAngel;
+    
     public int _currentHealth;
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
@@ -31,6 +34,17 @@ public class Undead : MonoBehaviour
 
     private void Update()
     {
+        //Undead[] allUndeads = GameObject.FindObjectsOfType<Undead>();
+        //foreach (Undead undead in allUndeads)
+        //{
+        //    _currentUndead = undead;
+        //}
+        FindClosestAngel();
+        
+        if (_targetAngel.Range.activeSelf == true)
+        {
+            Range.SetActive(true);
+        }
         
     }
 
@@ -88,4 +102,36 @@ public class Undead : MonoBehaviour
         CurrentPathIndex = currentIndex;
     }
 
+    void FindClosestAngel()
+    {
+        float distanceToClosestAngel = Mathf.Infinity;
+        Angel closestAngel = null;
+        Angel[] allAngels = GameObject.FindObjectsOfType<Angel>();
+
+        foreach (Angel currentAngel in allAngels)
+        {
+           
+            float distanceToAngel = (currentAngel.transform.position - this.transform.position).sqrMagnitude;
+            if (currentAngel.Range.activeSelf == false)
+            {
+                continue;
+            }
+            if (currentAngel == null)
+            {
+                return;
+
+            }
+            if (distanceToAngel < distanceToClosestAngel)
+            {
+                distanceToClosestAngel = distanceToAngel;
+                closestAngel = currentAngel;
+
+                _targetAngel = closestAngel;
+            }
+        }
+        if (closestAngel != null)
+        {
+            Debug.DrawLine(this.transform.position, closestAngel.transform.position);
+        }
+    }
 }

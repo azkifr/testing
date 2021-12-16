@@ -11,6 +11,7 @@ TagManager:
   - Range
   - Undead
   - Fighter
+  - AttackRange
   layers:
   - Default
   - TransparentFX

@@ -42,6 +42,7 @@ public class MapManager : MonoBehaviour
     private List<Angel> _spawnedAngels = new List<Angel>();
     private List<Undead> _spawnedUndeads = new List<Undead>();
     private List<AngelMeleeAttack> _MeleeAttackRange = new List<AngelMeleeAttack>();
+    private List<AngelRangeAttack> _RangeAttackRange = new List<AngelRangeAttack>();
 
     private float _runningSpawnDelay;
     public int EnemyCount=1;
@@ -77,6 +78,7 @@ public class MapManager : MonoBehaviour
             }
             _runningSpawnDelay = _spawnDelay;
         }
+
 
         foreach (Undead undead in _spawnedUndeads)
         {
@@ -116,6 +118,20 @@ public class MapManager : MonoBehaviour
                 }
             }
         }
+
+        foreach (Angel angel in _spawnedAngels)
+        {
+            if (angel.tag == "Range")
+            {
+                //Debug.Log("Archer");
+                angel.CheckNearestUndead(_spawnedUndeads);
+
+                angel.SeekTarget();
+
+                angel.ShootTarget();
+            }
+        }
+
     }
 
     private void CollectPerSecond()
@@ -175,6 +191,54 @@ public class MapManager : MonoBehaviour
         newUndead.SetTargetPosition(_undeadPaths[1].position);
         newUndead.SetCurrentPathIndex(1);
         newUndead.gameObject.SetActive(true);
+    }
+
+    public AngelRangeAttack GetArrowFromPool(AngelRangeAttack prefab)
+    {
+        GameObject newBulletObj = _RangeAttackRange.Find(
+
+            b => !b.gameObject.activeSelf && b.name.Contains(prefab.name)
+
+        )?.gameObject;
+
+
+
+        if (newBulletObj == null)
+        {
+
+            newBulletObj = Instantiate(prefab.gameObject);
+
+        }
+
+        AngelRangeAttack newBullet = newBulletObj.GetComponent<AngelRangeAttack>();
+
+        if (!_RangeAttackRange.Contains(newBullet))
+        {
+
+            _RangeAttackRange.Add(newBullet);
+
+        }
+
+        return newBullet;
+    }
+
+
+
+    public void ExplodeAt(Vector2 point, float radius, int damage)
+    {
+        foreach (Undead undead in _spawnedUndeads)
+        {
+            if (undead.gameObject.activeSelf)
+            {
+
+                if (Vector2.Distance(undead.transform.position, point) <= radius)
+                {
+
+                    undead.ReduceUndeadHealth(damage);
+
+                }
+            }
+        }  
     }
 
     //public AngelMeleeAttack GetAttack

@@ -15,9 +15,10 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void SetAngelPrefab(Angel angel)
     {
-       _angelPrefab =angel;
+        _angelPrefab =angel;
 
         _angelIcon.sprite = angel.GetAngelHeadIcon();
+        
     }
 
     // Implementasi dari Interface IBeginDragHandler
@@ -27,6 +28,9 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         GameObject newTowerObj = Instantiate(_angelPrefab.gameObject);
         _currentSpawnedAngel = newTowerObj.GetComponent<Angel>();
         _currentSpawnedAngel.ToggleOrderInLayer(true);
+
+        if (_currentSpawnedAngel.tag == "Melee")
+            _currentSpawnedAngel.Range.SetActive(false);
     }
 
     // Implementasi dari Interface IDragHandler
@@ -38,7 +42,9 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         mousePosition.z = -mainCamera.transform.position.z;
         Vector3 targetPosition = Camera.main.ScreenToWorldPoint(mousePosition);
         _currentSpawnedAngel.transform.position = targetPosition;
-        AngelMeleeAttack.Instance.StopAttack = true;
+
+        if(_currentSpawnedAngel.tag=="Melee")
+            _currentSpawnedAngel.Range.SetActive(false);
     }
 
     // Implementasi dari Interface IEndDragHandler
@@ -47,17 +53,21 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     {
         if (_currentSpawnedAngel.PlacePosition == null||_currentSpawnedAngel._angelCost>MapManager.Instance._totalGold)
         {
-
+            if (_currentSpawnedAngel.tag == "Melee")
+                _currentSpawnedAngel.Range.SetActive(false);
             Destroy(_currentSpawnedAngel.gameObject);
-
+            
         }
         else
         {
+            if (_currentSpawnedAngel.tag == "Melee")
+                _currentSpawnedAngel.Range.SetActive(true);
+
             _currentSpawnedAngel.LockPlacement();
             _currentSpawnedAngel.ToggleOrderInLayer(false);
             MapManager.Instance.RegisterSpawnedAngel(_currentSpawnedAngel);
             _currentSpawnedAngel = null;
-            AngelMeleeAttack.Instance.StopAttack = false;
+            
         }
     }
 

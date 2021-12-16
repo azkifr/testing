@@ -83,6 +83,22 @@ PrefabInstance:
       propertyPath: _angelPlace
       value: 
       objectReference: {fileID: 7515021611314632969}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDelay
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _bulletSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _rangePrefab
+      value: 
+      objectReference: {fileID: 2755217850779283304, guid: a3597e74bd6b635498be787270d62d6c, type: 3}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDistance
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7564006145171119723, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 3.2199998
