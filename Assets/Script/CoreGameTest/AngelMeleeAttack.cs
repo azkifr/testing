@@ -84,7 +84,7 @@ public class AngelMeleeAttack : MonoBehaviour
             {
                 Debug.Log("Angel Attack");
                 lastSwing = Time.time + _attackDelay;
-                _targetUndead.ReduceUndeadHealth(_attackPower);         
+                _targetUndead.ReduceUndeadHealth(_attackPower); 
                 //Debug.Log(_targetUndead._currentHealth);
             }
             else

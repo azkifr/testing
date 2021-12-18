@@ -27,7 +27,7 @@ RectTransform:
   m_GameObject: {fileID: 2923197018100548049}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 3681588999746024934}
   m_RootOrder: 0
@@ -165,5 +165,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _angelIcon: {fileID: 5404938269659408429}
-  angel: {fileID: 8820818732026921953, guid: 45cdab48b39dc7a46805402f5679663f, type: 3}
   StopAttack: 0

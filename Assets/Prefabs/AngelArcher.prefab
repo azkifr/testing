@@ -115,6 +115,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0977f54a5ce2eef4388a530f659636b7, type: 3}
+    - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_FlipX
       value: 0
@@ -127,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 0977f54a5ce2eef4388a530f659636b7, type: 3}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
 --- !u!212 &7515021611314632969 stripped

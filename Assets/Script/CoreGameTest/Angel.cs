@@ -20,7 +20,6 @@ public class Angel : MonoBehaviour
     // Tower Component
     [SerializeField] private SpriteRenderer _angelPlace;
     [SerializeField] private SpriteRenderer _angelHead;
-
     // Tower Properties
     [SerializeField] private int _shootPower = 1;
     [SerializeField] private float _shootDistance = 1f;
@@ -38,6 +37,9 @@ public class Angel : MonoBehaviour
     private float _runningShootDelay;
     private Undead _targetUndead;
     private Quaternion _targetRotation;
+    private Animator anim;
+
+    
 
     // Mengecek musuh terdekat
     public void CheckNearestUndead(List<Undead> undeads)
@@ -93,9 +95,10 @@ public class Angel : MonoBehaviour
     public void ShootTarget()
     {
         //Debug.Log("Shoot");
+        anim = _angelHead.GetComponent<Animator>();
         if (_targetUndead == null)
         {
-
+            //anim.GetBool("Idle", false);
             return;
 
         }

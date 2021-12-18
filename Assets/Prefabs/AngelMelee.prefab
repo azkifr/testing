@@ -221,8 +221,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.021
+      objectReference: {fileID: 0}
+    - target: {fileID: 3196530506003056242, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.2
+      value: 0.791
       objectReference: {fileID: 0}
     - target: {fileID: 3786136701893022943, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
@@ -293,6 +309,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 648496973077437005}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _animHead
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelCost
       value: 1
       objectReference: {fileID: 0}
@@ -308,6 +328,10 @@ PrefabInstance:
       propertyPath: _angelHealth
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _AnimationHead
+      value: 
+      objectReference: {fileID: 5043159387186068889}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _shootDistance
       value: 1
@@ -344,12 +368,32 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 63963072c8f5a0146a2f2fd90bb9e41d, type: 3}
+    - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SortingOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
@@ -372,8 +416,32 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9170917107397390420, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 8143910019503984978}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1428362256221216003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7122008386822179921, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+  m_PrefabInstance: {fileID: 8143910019503984978}
+  m_PrefabAsset: {fileID: 0}
 --- !u!212 &911940723454389745 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 8143910019503984978}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &5043159387186068889
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428362256221216003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97e628b1496f50c43b350b1fa38df5fa, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
