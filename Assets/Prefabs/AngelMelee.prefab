@@ -78,6 +78,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1765e352351e214f8b6fd7864b27df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _angelHead: {fileID: 911940723454389745}
   filter:
     useTriggers: 0
     useLayerMask: 0
@@ -92,7 +93,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _attackDelay: 0.01
+  _attackDelay: 0.3
 --- !u!1001 &8143910019503984978
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -325,8 +326,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1027207222129516806}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootDelay
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHealth
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _AnimationHead

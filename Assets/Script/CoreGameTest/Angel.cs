@@ -37,8 +37,6 @@ public class Angel : MonoBehaviour
     private float _runningShootDelay;
     private Undead _targetUndead;
     private Quaternion _targetRotation;
-    private Animator anim;
-
     
 
     // Mengecek musuh terdekat
@@ -95,10 +93,9 @@ public class Angel : MonoBehaviour
     public void ShootTarget()
     {
         //Debug.Log("Shoot");
-        anim = _angelHead.GetComponent<Animator>();
         if (_targetUndead == null)
         {
-            //anim.GetBool("Idle", false);
+            
             return;
 
         }

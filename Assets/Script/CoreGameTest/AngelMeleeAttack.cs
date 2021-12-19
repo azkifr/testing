@@ -17,6 +17,7 @@ public class AngelMeleeAttack : MonoBehaviour
     //        return _instance;
     //    }
     //}
+    [SerializeField] private SpriteRenderer _angelHead;
     public ContactFilter2D filter;
     private CircleCollider2D circleCollider2D;
     private Collider2D[] hits = new Collider2D[10];
@@ -29,6 +30,7 @@ public class AngelMeleeAttack : MonoBehaviour
     private float lastSwing;
 
     private Undead _targetUndead;
+    private Animator anim;
 
     private void Start()
     {
@@ -76,13 +78,14 @@ public class AngelMeleeAttack : MonoBehaviour
 
     private void OnCollide(Collider2D collision)
     {
-        if (collision.tag == "Undead"&&_targetUndead.gameObject==collision.gameObject)
+        anim = _angelHead.GetComponent<Animator>();
+        if (collision.tag == "Undead" & _targetUndead.gameObject == collision.gameObject)
         {
-            
             //Debug.Log("Hit");
             if (Time.time >= lastSwing)
             {
                 Debug.Log("Angel Attack");
+                anim.Play("AngelMeleeAttack");
                 lastSwing = Time.time + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
                 //Debug.Log(_targetUndead._currentHealth);
