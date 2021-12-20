@@ -1949,7 +1949,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1298911779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1959,9 +1959,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1298911778}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9af2bb3b976acac47b227e9a4cbd4d70, type: 3}
+  m_Script: {fileID: 11500000, guid: 4696a8d9345f3f24a8a8da5a794bba79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audiomixer: {fileID: 24100000, guid: 5f3fa8ba797f7d1418397fb68d770390, type: 2}
 --- !u!82 &1298911780
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1971,7 +1972,7 @@ AudioSource:
   m_GameObject: {fileID: 1298911778}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 5f3fa8ba797f7d1418397fb68d770390, type: 2}
   m_audioClip: {fileID: 8300000, guid: 34fb9740415282e46a11bc82579e9953, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -2471,13 +2472,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 845371419}
   m_HandleRect: {fileID: 441139499}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -50
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1298911779}
+        m_TargetAssemblyTypeName: BgScript, Assembly-CSharp
+        m_MethodName: SetVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1596789149
 GameObject:
   m_ObjectHideFlags: 0

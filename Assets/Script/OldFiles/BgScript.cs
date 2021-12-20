@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class BgScript : MonoBehaviour
 {
+    public AudioMixer audiomixer;
     private void Awake()
     {
         GameObject[] musicObj = GameObject.FindGameObjectsWithTag("gamemusic");
@@ -12,5 +14,10 @@ public class BgScript : MonoBehaviour
             Destroy(this.gameObject);
         }
         DontDestroyOnLoad(this.gameObject);
+    }
+
+    public void SetVolume (float volume)
+    {
+        audiomixer.SetFloat("volume", volume);
     }
 }
