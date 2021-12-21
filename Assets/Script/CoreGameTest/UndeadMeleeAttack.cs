@@ -26,7 +26,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     //Attack
     private int _attackPower = 1;
     //Swing
-    private float _attackDelay = 0.5f;
+    public float _attackDelay = 0.5f;
     private float lastSwing;
 
     private Angel _targetAngel;
@@ -89,6 +89,7 @@ public class UndeadMeleeAttack : MonoBehaviour
         }
         
     }
+    
     void FindClosestAngel()
     {
         float distanceToClosestAngel = Mathf.Infinity;

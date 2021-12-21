@@ -131,7 +131,7 @@ public class Undead : MonoBehaviour
         }
         if (closestAngel != null)
         {
-            Debug.DrawLine(this.transform.position, closestAngel.transform.position);
+            //Debug.DrawLine(this.transform.position, closestAngel.transform.position);
         }
     }
 }

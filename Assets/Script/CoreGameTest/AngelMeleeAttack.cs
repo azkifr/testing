@@ -103,10 +103,11 @@ public class AngelMeleeAttack : MonoBehaviour
         float distanceClosestUndead = Mathf.Infinity;
         Undead closestUndead = null;
         Undead[] allUndeads = GameObject.FindObjectsOfType<Undead>();
+        
         foreach(Undead currentUndead in allUndeads)
         {
             float distanceToUndead = (currentUndead.transform.position - this.transform.position).sqrMagnitude;
-            if (currentUndead == null)
+            if (currentUndead == null||currentUndead.gameObject.activeSelf==false)
             {
                 return;
             }
@@ -117,6 +118,9 @@ public class AngelMeleeAttack : MonoBehaviour
                 _targetUndead = closestUndead;
             }
         }
-        //Debug.DrawLine(this.transform.position, closestUndead.transform.position);
+        if (closestUndead != null)
+        {
+            Debug.DrawLine(this.transform.position, closestUndead.transform.position);
+        }
     }
 }
