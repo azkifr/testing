@@ -31,11 +31,13 @@ public class UndeadMeleeAttack : MonoBehaviour
 
     private Angel _targetAngel;
     private Undead _currentUndead;
+    private Animator anim;
 
     private void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -62,7 +64,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     }
     private void OnCollide(Collider2D collision)
     {
-       
+        
         if (collision.tag == "Melee")
         {
             //Debug.Log(collision.name);
@@ -74,7 +76,6 @@ public class UndeadMeleeAttack : MonoBehaviour
                     Debug.Log("Undead Hit");
                     lastSwing = Time.time + _attackDelay;
                     _targetAngel.ReduceAngelHealth(_attackPower);
-
                     if (collision.gameObject.activeSelf == false||_targetAngel==null)
                     {
                         Debug.Log("AngelDead");

@@ -31,11 +31,13 @@ public class AngelMeleeAttack : MonoBehaviour
 
     private Undead _targetUndead;
     private Animator anim;
+    private bool Attack;
 
     private void Start()
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = _angelHead.GetComponent<Animator>();
     }
     
     private void Update()
@@ -46,7 +48,7 @@ public class AngelMeleeAttack : MonoBehaviour
         for (int i = 0; i < hits.Length; i++)
         {
             if (hits[i] == null)
-            {
+            {    
                 continue;
             }
             //Debug.Log(_angelUI.StopAttack);
@@ -60,7 +62,6 @@ public class AngelMeleeAttack : MonoBehaviour
                 //clean up array manual
             hits[i] = null;
         }
-       
     }
 
     private void FixedUpdate()
@@ -74,18 +75,26 @@ public class AngelMeleeAttack : MonoBehaviour
         //        return;
         //    }
         //}
+        HandleAttack();
+    }
+
+    private void HandleAttack()
+    {
+        if(Attack)
+        {
+            anim.SetTrigger("Attack");
+        }
     }
 
     private void OnCollide(Collider2D collision)
     {
-        anim = _angelHead.GetComponent<Animator>();
         if (collision.tag == "Undead" & _targetUndead.gameObject == collision.gameObject)
-        {
+        {        
+            Attack = true;
             //Debug.Log("Hit");
             if (Time.time >= lastSwing)
             {
                 Debug.Log("Angel Attack");
-                anim.Play("AngelMeleeAttack");
                 lastSwing = Time.time + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
                 //Debug.Log(_targetUndead._currentHealth);
@@ -97,7 +106,6 @@ public class AngelMeleeAttack : MonoBehaviour
             }
         }
     }
-
     void FindClosestUndead()
     {
         float distanceClosestUndead = Mathf.Infinity;
