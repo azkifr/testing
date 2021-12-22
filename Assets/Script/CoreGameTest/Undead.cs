@@ -134,4 +134,11 @@ public class Undead : MonoBehaviour
             //Debug.DrawLine(this.transform.position, closestAngel.transform.position);
         }
     }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Leader")
+        {
+            Debug.Log("Undead Hit Leader");
+        }
+    }
 }

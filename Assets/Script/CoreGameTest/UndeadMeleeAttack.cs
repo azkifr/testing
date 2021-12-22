@@ -31,6 +31,7 @@ public class UndeadMeleeAttack : MonoBehaviour
 
     private Angel _targetAngel;
     private Undead _currentUndead;
+    private GameOverScript _currentLeader;
     private Animator anim;
 
     private void Start()
@@ -38,6 +39,7 @@ public class UndeadMeleeAttack : MonoBehaviour
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        _currentLeader = GetComponent<GameOverScript>();
     }
     private void Update()
     {
@@ -80,8 +82,29 @@ public class UndeadMeleeAttack : MonoBehaviour
                     {
                         Debug.Log("AngelDead");
                         _currentUndead.isStop = false;
-                    }
+                    } 
                 }
+            }
+            else
+            {
+                lastSwing = Time.time + _attackDelay;
+            }
+        }
+        else if (collision.tag == "Leader")
+        {
+            _currentUndead.isStop = true;
+            if (Time.time >= lastSwing)
+            {
+
+                    Debug.Log("Undead Hit Leader");
+                    lastSwing = Time.time + _attackDelay;
+                    _currentLeader.ReduceLeaderHealth(_attackPower);
+
+                    if (collision.gameObject.activeSelf == false || _currentLeader == null)
+                    {
+                        Debug.Log("Leader Dead");
+                        _currentUndead.isStop = false;
+                    }
             }
             else
             {
