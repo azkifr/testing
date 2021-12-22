@@ -125,7 +125,7 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
-  _attackDelay: 2
+  _attackDelay: 0.1
 --- !u!1001 &7788512516911332952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -275,7 +275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _maxHealth
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _moveSpeed

@@ -31,7 +31,6 @@ public class AngelMeleeAttack : MonoBehaviour
 
     private Undead _targetUndead;
     private Animator anim;
-    private bool Attack;
 
     private void Start()
     {
@@ -75,22 +74,13 @@ public class AngelMeleeAttack : MonoBehaviour
         //        return;
         //    }
         //}
-        HandleAttack();
-    }
-
-    private void HandleAttack()
-    {
-        if(Attack)
-        {
-            anim.SetTrigger("Attack");
-        }
     }
 
     private void OnCollide(Collider2D collision)
     {
         if (collision.tag == "Undead" & _targetUndead.gameObject == collision.gameObject)
-        {        
-            Attack = true;
+        {     
+            //anim.SetBool("Attack", true);
             //Debug.Log("Hit");
             if (Time.time >= lastSwing)
             {
@@ -98,6 +88,10 @@ public class AngelMeleeAttack : MonoBehaviour
                 lastSwing = Time.time + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
                 //Debug.Log(_targetUndead._currentHealth);
+                //if (collision.gameObject.activeSelf == false||_targetUndead==null)
+                //{
+                    //anim.SetBool("Idle", true);
+                //}
             }
             else
             {
@@ -111,7 +105,6 @@ public class AngelMeleeAttack : MonoBehaviour
         float distanceClosestUndead = Mathf.Infinity;
         Undead closestUndead = null;
         Undead[] allUndeads = GameObject.FindObjectsOfType<Undead>();
-        
         foreach(Undead currentUndead in allUndeads)
         {
             float distanceToUndead = (currentUndead.transform.position - this.transform.position).sqrMagnitude;
