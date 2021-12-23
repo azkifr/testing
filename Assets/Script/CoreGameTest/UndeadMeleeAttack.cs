@@ -95,23 +95,20 @@ public class UndeadMeleeAttack : MonoBehaviour
             _currentUndead.isStop = true;
             if (Time.time >= lastSwing)
             {
-
-                    Debug.Log("Undead Hit Leader");
-                    lastSwing = Time.time + _attackDelay;
-                    _currentLeader.ReduceLeaderHealth(_attackPower);
-
-                    if (collision.gameObject.activeSelf == false || _currentLeader == null)
-                    {
-                        Debug.Log("Leader Dead");
-                        _currentUndead.isStop = false;
-                    }
+                lastSwing = Time.time + _attackDelay;
+                Debug.Log("Undead Hit Leader");
+                _currentLeader.ReduceLeaderHealth(_attackPower);
+                if (collision.gameObject.activeSelf == false || _currentLeader == null)
+                {
+                    Debug.Log("Leader Dead");
+                    _currentUndead.isStop = false;
+                }
             }
             else
             {
                 lastSwing = Time.time + _attackDelay;
             }
         }
-        
     }
     
     void FindClosestAngel()

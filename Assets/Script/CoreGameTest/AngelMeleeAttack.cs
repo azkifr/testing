@@ -80,13 +80,14 @@ public class AngelMeleeAttack : MonoBehaviour
     {
         if (collision.tag == "Undead" & _targetUndead.gameObject == collision.gameObject)
         {     
-            //anim.SetBool("Attack", true);
+            
             //Debug.Log("Hit");
             if (Time.time >= lastSwing)
             {
-                Debug.Log("Angel Attack");
+                anim.SetTrigger("Attack");
                 lastSwing = Time.time + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
+                Debug.Log("Angel Attack");
                 //Debug.Log(_targetUndead._currentHealth);
                 //if (collision.gameObject.activeSelf == false||_targetUndead==null)
                 //{
@@ -96,6 +97,7 @@ public class AngelMeleeAttack : MonoBehaviour
             else
             {
                 //Debug.Log("Cooldown");
+
                 lastSwing = Time.time + _attackDelay;
             }
         }

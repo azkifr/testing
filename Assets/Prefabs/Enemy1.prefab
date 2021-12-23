@@ -149,6 +149,10 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 487373318565737849, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
+      propertyPath: m_SleepingMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 952197190765978176, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: m_Layer
       value: 0
@@ -275,11 +279,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _maxHealth
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _moveSpeed
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8294120563949606486, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
       propertyPath: _AngelMelee
