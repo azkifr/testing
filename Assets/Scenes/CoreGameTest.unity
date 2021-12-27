@@ -1378,7 +1378,7 @@ MonoBehaviour:
   - {fileID: 646498277}
   - {fileID: 306670961}
   _spawnDelay: 5
-  EnemyCount: 1
+  EnemyCount: 2
 --- !u!212 &744153106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2874,7 +2874,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panel: {fileID: 1375532816}
-  _LeaderHealth: 1
+  _LeaderHealth: 10
+  atk: 1
+  _attackDelay: 1
 --- !u!61 &1481048982
 BoxCollider2D:
   m_ObjectHideFlags: 0

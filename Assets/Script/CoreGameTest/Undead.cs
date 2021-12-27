@@ -25,7 +25,8 @@ public class Undead : MonoBehaviour
     [SerializeField] private GameObject Range;
 
     private Angel _targetAngel;
-    
+
+    private int _attackPower = 1;
     public int _currentHealth;
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
