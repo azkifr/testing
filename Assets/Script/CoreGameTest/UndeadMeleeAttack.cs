@@ -64,6 +64,27 @@ public class UndeadMeleeAttack : MonoBehaviour
             hits[i] = null;
         }
     }
+    // private void OnTriggerStay2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Leader")
+    //     {
+    //         if (Time.time >= lastSwing)
+    //         {
+    //             lastSwing = Time.time + _attackDelay;
+    //             Debug.Log("Undead Hit Leader");
+    //             _currentLeader.ReduceLeaderHealth(_attackPower);
+    //             if (collision.gameObject.activeSelf == false || _currentLeader == null)
+    //             {
+    //                 Debug.Log("Leader Dead");
+    //                 _currentUndead.isStop = false;
+    //             }
+    //         }
+    //         else
+    //         {
+    //             lastSwing = Time.time + _attackDelay;
+    //         }
+    //     }
+    // }
     private void OnCollide(Collider2D collision)
     {
         
@@ -83,25 +104,6 @@ public class UndeadMeleeAttack : MonoBehaviour
                         Debug.Log("AngelDead");
                         _currentUndead.isStop = false;
                     } 
-                }
-            }
-            else
-            {
-                lastSwing = Time.time + _attackDelay;
-            }
-        }
-        else if (collision.tag == "Leader")
-        {
-            _currentUndead.isStop = true;
-            if (Time.time >= lastSwing)
-            {
-                lastSwing = Time.time + _attackDelay;
-                Debug.Log("Undead Hit Leader");
-                _currentLeader.ReduceLeaderHealth(_attackPower);
-                if (collision.gameObject.activeSelf == false || _currentLeader == null)
-                {
-                    Debug.Log("Leader Dead");
-                    _currentUndead.isStop = false;
                 }
             }
             else

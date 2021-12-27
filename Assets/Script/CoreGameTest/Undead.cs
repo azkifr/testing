@@ -138,7 +138,9 @@ public class Undead : MonoBehaviour
     {
         if (collision.tag == "Leader")
         {
-            Debug.Log("Undead Hit Leader");
+            isStop = true;
+            // UndeadMeleeAttack[] OnTriggerStay2D;
+            // Debug.Log("Undead Hit Leader");
         }
     }
 }

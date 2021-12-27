@@ -7,23 +7,26 @@ public class GameOverScript : MonoBehaviour
 {
     [SerializeField]private GameObject panel;
 
+
     public int _LeaderHealth = 1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //if (collision.tag == "Undead")
-        //{
+        // if (collision.tag == "Undead")
+        // {
         //    Debug.Log("Enemy Pass");
         //    panel.SetActive(true);
         //    Time.timeScale = 0;
-        //}
+        // }
     }
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        if (collision.tag == "Undead")
-        {
-
-        }
-    }
+    // private void OnCollide2D(Collider2D collision)
+    // {
+    //     if (collision.tag == "Undead")
+    //     {
+    //         Debug.Log("Enemy Pass");
+    //         panel.SetActive(true);
+    //         Time.timeScale = 0;
+    //     }
+    // }
     
     public void ReduceLeaderHealth(int damage)
     {
