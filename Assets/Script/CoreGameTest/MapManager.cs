@@ -132,6 +132,8 @@ public class MapManager : MonoBehaviour
             }
         }
 
+        //Checck if inactive
+        
     }
 
     private void CollectPerSecond()

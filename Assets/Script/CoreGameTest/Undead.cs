@@ -92,8 +92,8 @@ public class Undead : MonoBehaviour
         _currentHealth -= damage;
         if (_currentHealth <= 0)
         {
-            
             gameObject.SetActive(false);
+            
         }
     }
 
