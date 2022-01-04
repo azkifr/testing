@@ -13,6 +13,7 @@ public class SceneManagerScript : MonoBehaviour
     public void SwitchScene(string name)
     {
         SceneManager.LoadScene(name);
+        Time.timeScale = 1;
     }
     
     public void QuitGame ()
