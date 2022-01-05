@@ -5,14 +5,25 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     private Transform bar;
-    // Start is called before the first frame update
+    float Size = 1f;
+    
     private void Start()
     {
-        bar = transform.Find("Bar");
+        GameObject AngelMelee = GameObject.Find("AngelMelee");
+        Angel angel = AngelMelee.GetComponent<Angel>();
     }
 
-    void ReduceHealthBar(float ReduceSize)
+    private void Update()
     {
-        bar.localScale = new Vector3(ReduceSize, 1f);
+        bar = transform.Find("Bar");
+        ReduceHealthBar();
+    }
+
+    void ReduceHealthBar()
+    {
+        int damage = 1;
+        float Totaldamage = damage*100/100;
+        float ReduceSize = Size - Totaldamage;
+        bar.localScale = new Vector3(ReduceSize, Size);
     }
 }

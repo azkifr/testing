@@ -173,9 +173,16 @@ public class Angel : MonoBehaviour
     {
         return _angelHead.sprite;
     }
+
+    public HealthBar GetHealthBar()
+    {
+        return _healthBar;
+    }
+
     public void ReduceAngelHealth(int damage)
     {
         _angelHealth -= damage;
+        GetHealthBar();
         if (_angelHealth <= 0)
         {
             Debug.Log("RIP");
