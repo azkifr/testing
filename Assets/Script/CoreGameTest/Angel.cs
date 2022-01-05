@@ -31,6 +31,7 @@ public class Angel : MonoBehaviour
 
     [SerializeField] public GameObject Range;
     [SerializeField] private AngelRangeAttack _rangePrefab;
+    [SerializeField] public HealthBar _healthBar;
 
     //Script angel range
 

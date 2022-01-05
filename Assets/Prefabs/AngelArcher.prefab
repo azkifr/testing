@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 627065019405658150, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.1
+      objectReference: {fileID: 0}
     - target: {fileID: 823363670511981235, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Name
       value: AngelArcher
@@ -88,9 +92,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7686583062649509374}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 623151466415712108}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelPlace
       value: 
       objectReference: {fileID: 7515021611314632969}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _healthFill
+      value: 
+      objectReference: {fileID: 6714758207336756515}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _shootDelay
       value: 2
@@ -109,11 +121,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564006145171119723, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2199998
+      value: 3.1
       objectReference: {fileID: 0}
     - target: {fileID: 8335578919914251810, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.82
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619641395868422821, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_FlipX
@@ -158,6 +174,16 @@ GameObject:
 --- !u!212 &7686583062649509374 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+  m_PrefabInstance: {fileID: 1661578483697166685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &623151466415712108 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2281913404908850737, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+  m_PrefabInstance: {fileID: 1661578483697166685}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6714758207336756515 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5341411891430399102, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 1661578483697166685}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &3508944086122318573

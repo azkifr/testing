@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4762922310980307257, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4762922310980307257, guid: ba31a33b2dcca8f4da5ee6720287b5b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -108,6 +108,14 @@ PrefabInstance:
     - target: {fileID: 528348331595622761, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 627065019405658150, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 627065019405658150, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 823363670511981235, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Name
@@ -322,9 +330,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 911940723454389745}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _healthBar
+      value: 
+      objectReference: {fileID: 6082958447475078342}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelPlace
       value: 
       objectReference: {fileID: 1027207222129516806}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _healthFill
+      value: 
+      objectReference: {fileID: 4261666194064805164}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _shootDelay
       value: 1
@@ -351,15 +367,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7564006145171119723, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 7582165273243552367, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8335578919914251810, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8335578919914251810, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8375934212178286712, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619641395868422821, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8619641395868422821, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8770655857274979890, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: m_Mesh
@@ -433,6 +465,22 @@ GameObject:
 --- !u!212 &911940723454389745 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+  m_PrefabInstance: {fileID: 8143910019503984978}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6082958447475078342 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2697649000281089428, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+  m_PrefabInstance: {fileID: 8143910019503984978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c82dff6c8f82a458dc67057734942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &4261666194064805164 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5341411891430399102, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 8143910019503984978}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &5043159387186068889
