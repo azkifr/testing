@@ -38,7 +38,7 @@ public class GameOverScript : MonoBehaviour
             }
         }
 
-        if (!GameObject.FindWithTag("Undead"))
+        if (!GameObject.FindWithTag("Undead")&&MapManager.Instance.EnemyCount==0)
         {
             EnableGameOver(1);
         }

@@ -51,6 +51,7 @@ public class MapManager : MonoBehaviour
     private void Start()
     {
         InstantiateAllAngelUI();
+        Time.timeScale = 1;
     }
 
     private void Update()
