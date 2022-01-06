@@ -20,9 +20,10 @@ public class Undead : MonoBehaviour
     //}
     [SerializeField] private int _maxHealth = 1;
     [SerializeField] private float _moveSpeed = 0.5f;
-    [SerializeField] private SpriteRenderer _healthBar;
-    [SerializeField] private SpriteRenderer _healthFill;
+    // [SerializeField] private SpriteRenderer _healthBar;
+    // [SerializeField] private SpriteRenderer _healthFill;
     [SerializeField] private GameObject Range;
+    [SerializeField] public HealthBar _healthBar;
 
     private Angel _targetAngel;
 
@@ -30,6 +31,7 @@ public class Undead : MonoBehaviour
     public int _currentHealth;
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
+    
 
     public bool isStop;
 
@@ -54,7 +56,7 @@ public class Undead : MonoBehaviour
     {
         _currentHealth = _maxHealth;
 
-        _healthFill.size = _healthBar.size;
+        // _healthFill.size = _healthBar.size;
     }
 
     public void MoveToTarget()
@@ -65,7 +67,7 @@ public class Undead : MonoBehaviour
     public void SetTargetPosition(Vector3 targetPosition)
     {
         TargetPosition = targetPosition;
-        _healthBar.transform.parent = null;
+        // _healthBar.transform.parent = null;
 
         // Mengubah rotasi dari enemy
         Vector3 distance = TargetPosition - transform.position;
@@ -84,12 +86,15 @@ public class Undead : MonoBehaviour
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
             }
 
-        _healthBar.transform.parent = transform;
+        // _healthBar.transform.parent = transform;
     }
 
     public void ReduceUndeadHealth(int damage)
     {
         _currentHealth -= damage;
+        float health = _currentHealth;
+        health -= .5f;
+        _healthBar.SetSize(health);
         if (_currentHealth <= 0)
         {
             gameObject.SetActive(false);

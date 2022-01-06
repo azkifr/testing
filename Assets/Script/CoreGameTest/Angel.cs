@@ -26,7 +26,7 @@ public class Angel : MonoBehaviour
     [SerializeField] private float _shootDelay = 5f;
     [SerializeField] private float _bulletSpeed = 1f;
     [SerializeField] private float _bulletSplashRadius = 0f;
-    [SerializeField] private int _angelHealth = 1;
+    [SerializeField] public int _angelHealth = 1;
     [SerializeField] public double _angelCost = 10;
 
     [SerializeField] public GameObject Range;
@@ -174,15 +174,12 @@ public class Angel : MonoBehaviour
         return _angelHead.sprite;
     }
 
-    public HealthBar GetHealthBar()
-    {
-        return _healthBar;
-    }
-
     public void ReduceAngelHealth(int damage)
     {
         _angelHealth -= damage;
-        GetHealthBar();
+        float health = _angelHealth;
+        health -= .5f;
+        _healthBar.SetSize(health);
         if (_angelHealth <= 0)
         {
             Debug.Log("RIP");
