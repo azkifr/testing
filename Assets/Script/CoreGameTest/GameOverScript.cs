@@ -7,6 +7,9 @@ public class GameOverScript : MonoBehaviour
 {
     [SerializeField]private GameObject panelWin;
     [SerializeField] private GameObject panelLose;
+    [SerializeField] private float DelayEnd = 5f;
+
+    private float DelaySave;
 
     public int _LeaderHealth = 1;
     
@@ -40,8 +43,10 @@ public class GameOverScript : MonoBehaviour
 
         if (!GameObject.FindWithTag("Undead")&&MapManager.Instance.EnemyCount==0)
         {
-            EnableGameOver(1);
+            Time.timeScale = 0;
+            Invoke("EnableGameOverWin", 10);
         }
+        
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -71,19 +76,19 @@ public class GameOverScript : MonoBehaviour
         {
             Debug.Log("RIP");
             gameObject.SetActive(false);
-            EnableGameOver(2);
+            Time.timeScale = 0;
+            Invoke("EnableGameOverLose", 3);
+            //EnableGameOver(2);
         }
     }
-    public void EnableGameOver(int num)
+    public void EnableGameOverWin()
     {
-        Time.timeScale = 0;
-        if (num == 1)
-        {
-            panelWin.SetActive(true);
-        }
-        else if (num == 2)
-        {
-            panelLose.SetActive(true);
-        }
+       
+        panelWin.SetActive(true);
+    }
+    public void EnableGameOverLose()
+    {
+        
+        panelLose.SetActive(true);
     }
 }

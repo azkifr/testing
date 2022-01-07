@@ -26,13 +26,14 @@ public class UndeadMeleeAttack : MonoBehaviour
     //Attack
     private int _attackPower = 1;
     //Swing
-    public float _attackDelay = 0.5f;
+    [SerializeField]public float _attackDelay = 5f;
     private float lastSwing;
 
     private Angel _targetAngel;
     private Undead _currentUndead;
     private GameOverScript _currentLeader;
     private Animator anim;
+    private bool allowAttack;
 
     private void Start()
     {
@@ -58,8 +59,13 @@ public class UndeadMeleeAttack : MonoBehaviour
                 continue;
             }
             FindClosestAngel();
-            
+            //lastSwing -= Time.unscaledDeltaTime;
+            //if (lastSwing <= 0f)
+            //{
             OnCollide(hits[i]);
+            //    lastSwing = _attackDelay;
+            //}
+           
             //clean up array manual
             hits[i] = null;
         }
@@ -87,17 +93,19 @@ public class UndeadMeleeAttack : MonoBehaviour
     // }
     private void OnCollide(Collider2D collision)
     {
-        
+        //Debug.Log(collision.name);
         if (collision.tag == "Melee")
         {
-            //Debug.Log(collision.name);
+            //Debug.Log(lastSwing+" "+Time.time);
             _currentUndead.isStop = true;
-            if (Time.time >= lastSwing)
+            lastSwing -= Time.unscaledDeltaTime;
+            if (lastSwing<=0f)
             {
+                Debug.Log("Cooldown done");
                 if (_targetAngel.Range.activeSelf == true)
                 {
                     Debug.Log("Undead Hit");
-                    lastSwing = Time.time + _attackDelay;
+                    //lastSwing = Time.time + _attackDelay;
                     _targetAngel.ReduceAngelHealth(_attackPower);
                     if (collision.gameObject.activeSelf == false||_targetAngel==null)
                     {
@@ -105,11 +113,12 @@ public class UndeadMeleeAttack : MonoBehaviour
                         _currentUndead.isStop = false;
                     } 
                 }
+                lastSwing = _attackDelay;
             }
-            else
-            {
-                lastSwing = Time.time + _attackDelay;
-            }
+            //else if(Time.time<lastSwing)
+            //{
+            //    lastSwing = Time.time ;
+            //}
         }
     }
     
@@ -141,10 +150,14 @@ public class UndeadMeleeAttack : MonoBehaviour
                 }
             }
         }
-        //if (closestAngel != null)
-        //{
-        //    Debug.DrawLine(this.transform.position, closestAngel.transform.position);
-        //}
+        if (closestAngel != null)
+        {
+            Debug.DrawLine(this.transform.position, closestAngel.transform.position);
+        }
     }
-
+    void AttackDelay()
+    {
+        allowAttack = true;
+        Debug.Log("AttackDelaying");
+    }
 }

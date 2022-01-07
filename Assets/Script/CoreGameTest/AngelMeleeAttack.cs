@@ -23,10 +23,10 @@ public class AngelMeleeAttack : MonoBehaviour
     private Collider2D[] hits = new Collider2D[10];
     private SpriteRenderer spriteRenderer;
     //Attack
-    private int _attackPower=1;
+    private int _attackPower=0;
 
     //Swing
-    public float _attackDelay = 1.0f;
+    [SerializeField]public float _attackDelay = 1f;
     private float lastSwing;
 
     private Undead _targetUndead;
@@ -57,7 +57,13 @@ public class AngelMeleeAttack : MonoBehaviour
             //    continue;
             //}
             FindClosestUndead();
-            OnCollide(hits[i]);
+            lastSwing -= Time.unscaledDeltaTime;
+            if (lastSwing <= 0f)
+            {
+                OnCollide(hits[i]);
+                lastSwing = _attackDelay;
+            }
+           
                 //clean up array manual
             hits[i] = null;
         }
@@ -82,10 +88,10 @@ public class AngelMeleeAttack : MonoBehaviour
         {     
             
             //Debug.Log("Hit");
-            if (Time.time >= lastSwing)
-            {
+            //if (Time.unscaledDeltaTime >= lastSwing)
+            //{
                 anim.SetTrigger("Attack");
-                lastSwing = Time.time + _attackDelay;
+                //lastSwing = Time.unscaledDeltaTime + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
                 Debug.Log("Angel Attack");
                 //Debug.Log(_targetUndead._currentHealth);
@@ -93,13 +99,13 @@ public class AngelMeleeAttack : MonoBehaviour
                 //{
                     //anim.SetBool("Idle", true);
                 //}
-            }
-            else
-            {
-                //Debug.Log("Cooldown");
+            //}
+            //else
+            //{
+            //    Debug.Log("Cooldown");
 
-                lastSwing = Time.time + _attackDelay;
-            }
+            //    lastSwing = Time.unscaledDeltaTime + _attackDelay;
+            //}
         }
     }
     void FindClosestUndead()
@@ -121,9 +127,9 @@ public class AngelMeleeAttack : MonoBehaviour
                 _targetUndead = closestUndead;
             }
         }
-        if (closestUndead != null)
-        {
-            Debug.DrawLine(this.transform.position, closestUndead.transform.position);
-        }
+        //if (closestUndead != null)
+        //{
+        //    Debug.DrawLine(this.transform.position, closestUndead.transform.position);
+        //}
     }
 }
