@@ -23,10 +23,10 @@ public class AngelMeleeAttack : MonoBehaviour
     private Collider2D[] hits = new Collider2D[10];
     private SpriteRenderer spriteRenderer;
     //Attack
-    private int _attackPower=0;
+    private int _attackPower=30;
 
     //Swing
-    [SerializeField]public float _attackDelay = 1f;
+    [SerializeField]public float _attackDelay = 6f;
     private float lastSwing;
 
     private Undead _targetUndead;

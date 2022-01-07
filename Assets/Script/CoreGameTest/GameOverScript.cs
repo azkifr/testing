@@ -43,8 +43,8 @@ public class GameOverScript : MonoBehaviour
 
         if (!GameObject.FindWithTag("Undead")&&MapManager.Instance.EnemyCount==0)
         {
-            Time.timeScale = 0;
-            Invoke("EnableGameOverWin", 10);
+            
+            Invoke("EnableGameOverWin", 3);
         }
         
     }
@@ -76,19 +76,19 @@ public class GameOverScript : MonoBehaviour
         {
             Debug.Log("RIP");
             gameObject.SetActive(false);
-            Time.timeScale = 0;
+            
             Invoke("EnableGameOverLose", 3);
             //EnableGameOver(2);
         }
     }
     public void EnableGameOverWin()
     {
-       
+        Time.timeScale = 0;
         panelWin.SetActive(true);
     }
     public void EnableGameOverLose()
     {
-        
+        Time.timeScale = 0;
         panelLose.SetActive(true);
     }
 }

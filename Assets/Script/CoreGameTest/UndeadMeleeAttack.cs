@@ -24,9 +24,9 @@ public class UndeadMeleeAttack : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     //Attack
-    private int _attackPower = 1;
+    private int _attackPower = 40;
     //Swing
-    [SerializeField]public float _attackDelay = 5f;
+    [SerializeField]public float _attackDelay = 2f;
     private float lastSwing;
 
     private Angel _targetAngel;

@@ -155,6 +155,7 @@ public class MapManager : MonoBehaviour
     {
         foreach (Angel angel in _angelPrefabs)
         {
+            
             GameObject newAngelUIObj = Instantiate(_angelUIPrefab.gameObject, _angelUIParent);
             AngelUI newAngelUI = newAngelUIObj.GetComponent<AngelUI>();
  
