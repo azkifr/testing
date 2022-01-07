@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AngelRangeAttack : MonoBehaviour
 {
-    private int _bulletPower;
+    private float _bulletPower;
     private float _bulletSpeed;
     private float _bulletSplashRadius;
 
@@ -67,7 +67,7 @@ public class AngelRangeAttack : MonoBehaviour
 
 
 
-    public void SetProperties(int bulletPower, float bulletSpeed, float bulletSplashRadius)
+    public void SetProperties(float bulletPower, float bulletSpeed, float bulletSplashRadius)
     {
 
         _bulletPower = bulletPower;

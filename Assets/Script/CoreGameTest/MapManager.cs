@@ -228,7 +228,7 @@ public class MapManager : MonoBehaviour
 
 
 
-    public void ExplodeAt(Vector2 point, float radius, int damage)
+    public void ExplodeAt(Vector2 point, float radius, float damage)
     {
         foreach (Undead undead in _spawnedUndeads)
         {

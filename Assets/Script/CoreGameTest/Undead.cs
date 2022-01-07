@@ -27,8 +27,8 @@ public class Undead : MonoBehaviour
 
     private Angel _targetAngel;
 
-    private int _attackPower = 1;
-    public int _currentHealth;
+    private float _attackPower = 1;
+    public float _currentHealth;
     public Vector3 TargetPosition { get; private set; }
     public int CurrentPathIndex { get; private set; }
     
@@ -89,7 +89,7 @@ public class Undead : MonoBehaviour
         // _healthBar.transform.parent = transform;
     }
 
-    public void ReduceUndeadHealth(int damage)
+    public void ReduceUndeadHealth(float damage)
     {
         _currentHealth -= damage;
         float health = _currentHealth;
