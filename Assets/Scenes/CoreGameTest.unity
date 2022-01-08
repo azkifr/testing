@@ -1565,7 +1565,7 @@ MonoBehaviour:
   - {fileID: 646498277}
   - {fileID: 306670961}
   _spawnDelay: 5
-  EnemyCount: 2
+  EnemyCount: 1
 --- !u!212 &744153106
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3592,6 +3592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   panelWin: {fileID: 1416221493}
   panelLose: {fileID: 1375532816}
+  DelayEnd: 5
   _LeaderHealth: 5
   atk: 1
   _attackDelay: 1

@@ -338,6 +338,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6082958447475078342}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _maxHealth
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelPlace
       value: 
       objectReference: {fileID: 1027207222129516806}
@@ -350,8 +354,12 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootPower
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHealth
-      value: 300
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _bulletSpeed

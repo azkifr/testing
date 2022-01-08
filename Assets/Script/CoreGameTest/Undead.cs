@@ -18,7 +18,7 @@ public class Undead : MonoBehaviour
 
     //    }
     //}
-    [SerializeField] private int _maxHealth = 1;
+    [SerializeField] private float _maxHealth = 1;
     [SerializeField] private float _moveSpeed = 0.5f;
     // [SerializeField] private SpriteRenderer _healthBar;
     // [SerializeField] private SpriteRenderer _healthFill;
@@ -92,8 +92,7 @@ public class Undead : MonoBehaviour
     public void ReduceUndeadHealth(float damage)
     {
         _currentHealth -= damage;
-        float health = _currentHealth;
-        health -= .5f;
+        float health = _currentHealth/_maxHealth;
         _healthBar.SetSize(health);
         if (_currentHealth <= 0)
         {

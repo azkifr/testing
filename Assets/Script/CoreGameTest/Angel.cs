@@ -26,6 +26,7 @@ public class Angel : MonoBehaviour
     [SerializeField] private float _shootDelay = 5f;
     [SerializeField] private float _bulletSpeed = 1f;
     [SerializeField] private float _bulletSplashRadius = 0f;
+    [SerializeField] private float _maxHealth = 1;
     [SerializeField] public float _angelHealth = 1;
     [SerializeField] public double _angelCost = 10;
 
@@ -40,6 +41,12 @@ public class Angel : MonoBehaviour
     private Quaternion _targetRotation;
     
 
+    private void OnEnable()
+    {
+        _angelHealth = _maxHealth;
+
+        // _healthFill.size = _healthBar.size;
+    }
     // Mengecek musuh terdekat
     public void CheckNearestUndead(List<Undead> undeads)
     {
@@ -177,8 +184,8 @@ public class Angel : MonoBehaviour
     public void ReduceAngelHealth(float damage)
     {
         _angelHealth -= damage;
-        _angelHealth = damage/_angelHealth;
-        _healthBar.SetSize(_angelHealth);
+        float health = _angelHealth/_maxHealth;
+        _healthBar.SetSize(health);
         if (_angelHealth <= 0)
         {
             Debug.Log("RIP");
