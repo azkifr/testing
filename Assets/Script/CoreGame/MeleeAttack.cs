@@ -52,6 +52,7 @@ public class MeleeAttack : MonoBehaviour
         {
             if (coll.name != "AngelMelee")
             {
+                SoundManagerScript.PlaySound ("AngelMeleeAttack");
                 return;
             }
             Debug.Log(coll.name);

@@ -104,6 +104,7 @@ public class UndeadMeleeAttack : MonoBehaviour
                 Debug.Log("Cooldown done");
                 if (_targetAngel.Range.activeSelf == true)
                 {
+                    SoundManagerScript.PlaySound ("AttackUndead");
                     Debug.Log("Undead Hit");
                     //lastSwing = Time.time + _attackDelay;
                     _targetAngel.ReduceAngelHealth(_attackPower);

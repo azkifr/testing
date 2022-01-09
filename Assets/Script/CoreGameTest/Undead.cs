@@ -74,6 +74,7 @@ public class Undead : MonoBehaviour
             // Menghadap kanan (default)
             if (distance.x > 0)
             {
+                SoundManagerScript.PlaySound ("WalkUndead");
 
                 transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 0f));
 

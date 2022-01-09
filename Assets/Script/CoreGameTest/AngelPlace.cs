@@ -21,7 +21,6 @@ public class AngelPlace : MonoBehaviour
             if (collision.tag == "Range"&&gameObject.tag=="RangeTile")//Tile khusus range
             {
                 //Debug.Log("Range");
-                
                 angel.SetPlacePosition(transform.position);
                 
             }

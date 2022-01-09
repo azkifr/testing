@@ -93,6 +93,7 @@ public class AngelMeleeAttack : MonoBehaviour
                 anim.SetTrigger("Attack");
                 //lastSwing = Time.unscaledDeltaTime + _attackDelay;
                 _targetUndead.ReduceUndeadHealth(_attackPower); 
+                SoundManagerScript.PlaySound ("AngelMeleeAttack");
                 Debug.Log("Angel Attack");
                 //Debug.Log(_targetUndead._currentHealth);
                 //if (collision.gameObject.activeSelf == false||_targetUndead==null)

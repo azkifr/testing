@@ -43,7 +43,6 @@ public class GameOverScript : MonoBehaviour
 
         if (!GameObject.FindWithTag("Undead")&&MapManager.Instance.EnemyCount==0)
         {
-            
             Invoke("EnableGameOverWin", 3);
         }
         

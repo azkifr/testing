@@ -31,6 +31,7 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
         if (_currentSpawnedAngel.tag == "Melee")
             _currentSpawnedAngel.Range.SetActive(false);
+            SoundManagerScript.PlaySound ("Select");
     }
 
     // Implementasi dari Interface IDragHandler
@@ -62,6 +63,7 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
         {
             if (_currentSpawnedAngel.tag == "Melee")
                 _currentSpawnedAngel.Range.SetActive(true);
+                SoundManagerScript.PlaySound ("DropCharacter");
 
             _currentSpawnedAngel.LockPlacement();
             _currentSpawnedAngel.ToggleOrderInLayer(false);

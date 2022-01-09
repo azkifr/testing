@@ -13,7 +13,7 @@ public class BgScript : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this);
     }
 
     public void SetVolume (float volume)
