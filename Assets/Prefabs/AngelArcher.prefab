@@ -94,7 +94,7 @@ PrefabInstance:
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _healthBar
       value: 
-      objectReference: {fileID: 623151466415712108}
+      objectReference: {fileID: 3630153821210184905}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelPlace
       value: 
@@ -106,6 +106,14 @@ PrefabInstance:
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _shootDelay
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _shootPower
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+      propertyPath: _angelHealth
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _bulletSpeed
@@ -176,11 +184,17 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 9053121741642120355, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 1661578483697166685}
   m_PrefabAsset: {fileID: 0}
---- !u!212 &623151466415712108 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 2281913404908850737, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
+--- !u!114 &3630153821210184905 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2697649000281089428, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
   m_PrefabInstance: {fileID: 1661578483697166685}
   m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c82dff6c8f82a458dc67057734942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &6714758207336756515 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5341411891430399102, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}

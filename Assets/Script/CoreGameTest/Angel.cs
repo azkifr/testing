@@ -39,7 +39,12 @@ public class Angel : MonoBehaviour
     private float _runningShootDelay;
     private Undead _targetUndead;
     private Quaternion _targetRotation;
-    
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = _angelHead.GetComponent<Animator>();
+    }
 
     private void OnEnable()
     {
@@ -109,6 +114,7 @@ public class Angel : MonoBehaviour
         }
 
         _runningShootDelay -= Time.unscaledDeltaTime;
+        anim.SetTrigger("Attack");
         if (_runningShootDelay <= 0f)
         {
             //bool headHasAimed = Mathf.Abs(_angelHead.transform.rotation.eulerAngles.z - _targetRotation.eulerAngles.z) < 10f;
@@ -188,6 +194,7 @@ public class Angel : MonoBehaviour
         _healthBar.SetSize(health);
         if (_angelHealth <= 0)
         {
+            // anim.SetTrigger("Dead");
             Debug.Log("RIP");
             gameObject.SetActive(false);
             

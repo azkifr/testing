@@ -26,6 +26,7 @@ public class Undead : MonoBehaviour
     [SerializeField] public HealthBar _healthBar;
 
     private Angel _targetAngel;
+    private Animator anim;
 
     private float _attackPower = 1;
     public float _currentHealth;
@@ -35,6 +36,10 @@ public class Undead : MonoBehaviour
 
     public bool isStop;
 
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
     private void Update()
     {
         //Undead[] allUndeads = GameObject.FindObjectsOfType<Undead>();
@@ -145,6 +150,7 @@ public class Undead : MonoBehaviour
         if (collision.tag == "Leader")
         {
             isStop = true;
+            // anim.SetTrigger("Attack");
             // UndeadMeleeAttack[] OnTriggerStay2D;
             // Debug.Log("Undead Hit Leader");
         }

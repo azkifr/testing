@@ -126,6 +126,7 @@ MonoBehaviour:
     minNormalAngle: 0
     maxNormalAngle: 0
   _attackDelay: 2
+  _undeadHead: {fileID: 7831360240499568953}
 --- !u!1001 &7788512516911332952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -315,6 +316,11 @@ GameObject:
 --- !u!4 &4953314740162036004 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2930699166440914812, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
+  m_PrefabInstance: {fileID: 7788512516911332952}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &7831360240499568953 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 52018423663087457, guid: 375f4676b305f8c43ab408c722bc1848, type: 3}
   m_PrefabInstance: {fileID: 7788512516911332952}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8552302104847848172 stripped

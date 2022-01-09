@@ -27,6 +27,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     private float _attackPower = 40;
     //Swing
     [SerializeField]public float _attackDelay = 2f;
+    [SerializeField] private SpriteRenderer _undeadHead;
     private float lastSwing;
 
     private Angel _targetAngel;
@@ -39,7 +40,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     {
         circleCollider2D = GetComponent<CircleCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+        anim = _undeadHead.GetComponent<Animator>();
         _currentLeader = GetComponent<GameOverScript>();
     }
     private void Update()
@@ -105,6 +106,7 @@ public class UndeadMeleeAttack : MonoBehaviour
                 if (_targetAngel.Range.activeSelf == true)
                 {
                     SoundManagerScript.PlaySound ("AttackUndead");
+                    anim.SetTrigger("Attack");
                     Debug.Log("Undead Hit");
                     //lastSwing = Time.time + _attackDelay;
                     _targetAngel.ReduceAngelHealth(_attackPower);
