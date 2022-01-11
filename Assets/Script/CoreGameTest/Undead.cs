@@ -86,11 +86,11 @@ public class Undead : MonoBehaviour
             }
 
             // Menghadap kiri
-            else
-            {
+            //else
+            //{
 
-                transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
-            }
+            //    transform.rotation = Quaternion.Euler(new Vector3(0f, 0f, 180f));
+            //}
 
         // _healthBar.transform.parent = transform;
     }

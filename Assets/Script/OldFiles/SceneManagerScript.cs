@@ -16,6 +16,16 @@ public class SceneManagerScript : MonoBehaviour
         Time.timeScale = 1;
     }
     
+    public void PauseScene(GameObject pauseMenu)
+    {
+        pauseMenu.SetActive(true);
+        Time.timeScale = 0;
+    }
+    public void ContinueScene(GameObject pauseMenu)
+    {
+        pauseMenu.SetActive(false);
+        Time.timeScale = 1;
+    }
     public void QuitGame ()
     {
         Application.Quit();
