@@ -2149,7 +2149,7 @@ MonoBehaviour:
   - {fileID: 646498277}
   - {fileID: 306670961}
   _spawnDelay: 5
-  EnemyCount: 1
+  EnemyCount: 3
 --- !u!212 &744153106
 SpriteRenderer:
   m_ObjectHideFlags: 0

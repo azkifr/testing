@@ -318,7 +318,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 56751569ad989ef4f9dc50b8d9a7eeda, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -391,9 +391,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxHealth: 3
   _moveSpeed: 1
-  _healthBar: {fileID: 0}
-  _healthFill: {fileID: 0}
   Range: {fileID: 0}
+  _healthBar: {fileID: 0}
   _currentHealth: 0
   isStop: 0
 --- !u!1 &8357943527313740515

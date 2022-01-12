@@ -28,6 +28,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     //Swing
     [SerializeField]public float _attackDelay = 2f;
     [SerializeField] private SpriteRenderer _undeadHead;
+    
     private float lastSwing;
 
     private Angel _targetAngel;
@@ -47,7 +48,7 @@ public class UndeadMeleeAttack : MonoBehaviour
     {
 
         Undead[] allUndeads = GameObject.FindObjectsOfType<Undead>();
-        foreach (Undead undead in allUndeads)
+        foreach(Undead undead in allUndeads)
         {
             _currentUndead = undead;
         }
@@ -55,6 +56,7 @@ public class UndeadMeleeAttack : MonoBehaviour
         circleCollider2D.OverlapCollider(filter, hits);
         for (int i = 0; i < hits.Length; i++)
         {
+            
             if (hits[i] == null)
             {
                 continue;
@@ -63,7 +65,10 @@ public class UndeadMeleeAttack : MonoBehaviour
             //lastSwing -= Time.unscaledDeltaTime;
             //if (lastSwing <= 0f)
             //{
-            OnCollide(hits[i]);
+                OnCollide(hits[i]);
+      
+
+            //OnCollide(hits[i]);
             //    lastSwing = _attackDelay;
             //}
            
@@ -71,33 +76,14 @@ public class UndeadMeleeAttack : MonoBehaviour
             hits[i] = null;
         }
     }
-    // private void OnTriggerStay2D(Collider2D collision)
-    // {
-    //     if (collision.tag == "Leader")
-    //     {
-    //         if (Time.time >= lastSwing)
-    //         {
-    //             lastSwing = Time.time + _attackDelay;
-    //             Debug.Log("Undead Hit Leader");
-    //             _currentLeader.ReduceLeaderHealth(_attackPower);
-    //             if (collision.gameObject.activeSelf == false || _currentLeader == null)
-    //             {
-    //                 Debug.Log("Leader Dead");
-    //                 _currentUndead.isStop = false;
-    //             }
-    //         }
-    //         else
-    //         {
-    //             lastSwing = Time.time + _attackDelay;
-    //         }
-    //     }
-    // }
+
     private void OnCollide(Collider2D collision)
     {
         //Debug.Log(collision.name);
         if (collision.tag == "Melee")
         {
             //Debug.Log(lastSwing+" "+Time.time);
+
             _currentUndead.isStop = true;
             lastSwing -= Time.unscaledDeltaTime;
             if (lastSwing<=0f)

@@ -45,9 +45,23 @@ public class MapManager : MonoBehaviour
     private List<AngelRangeAttack> _RangeAttackRange = new List<AngelRangeAttack>();
 
     private float _runningSpawnDelay;
-    public int EnemyCount=1;
+    public int EnemyCount = 2;
 
-
+    public void RegisterEnemyCount(int type)
+    {
+        if(type==1)//Easy
+        {
+            EnemyCount = 1;
+        }
+        else if(type==2)//Medium
+        {
+            EnemyCount = 1;
+        }
+        else if(type==3)//Hard
+        {
+            EnemyCount = 1;
+        }
+    }
     private void Start()
     {
         InstantiateAllAngelUI();
