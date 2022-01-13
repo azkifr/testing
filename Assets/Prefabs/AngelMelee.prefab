@@ -414,7 +414,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelCost
-      value: 1
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHead

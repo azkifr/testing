@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4475572551028758886
 Transform:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ PrefabInstance:
       objectReference: {fileID: 7051735997785162178}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelCost
-      value: 20
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 6927434625139846755, guid: ea0daf22b2363634fbdd85259a7c7e1b, type: 3}
       propertyPath: _angelHead
