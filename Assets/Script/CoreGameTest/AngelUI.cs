@@ -15,9 +15,11 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
 
     public void SetAngelPrefab(Angel angel)
     {
+
         _angelPrefab =angel;
 
         _angelIcon.sprite = angel.GetAngelHeadIcon();
+        
         
     }
 
@@ -25,6 +27,7 @@ public class AngelUI : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragH
     // Fungsi ini terpanggil sekali ketika pertama men-drag UI
     public void OnBeginDrag(PointerEventData eventData)
     {
+        _angelPrefab._CardSlot.gameObject.SetActive(false);
         GameObject newTowerObj = Instantiate(_angelPrefab.gameObject);
         _currentSpawnedAngel = newTowerObj.GetComponent<Angel>();
         _currentSpawnedAngel.ToggleOrderInLayer(true);

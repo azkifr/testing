@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Angel : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class Angel : MonoBehaviour
     // Tower Component
     [SerializeField] private SpriteRenderer _angelPlace;
     [SerializeField] private SpriteRenderer _angelHead;
+    [SerializeField] public SpriteRenderer _CardSlot;
     // Tower Properties
     [SerializeField] private float _shootPower = 1;
     [SerializeField] private float _shootDistance = 1f;
@@ -184,7 +186,8 @@ public class Angel : MonoBehaviour
     // Fungsi yang digunakan untuk mengambil sprite pada Tower Head
     public Sprite GetAngelHeadIcon()
     {
-        return _angelHead.sprite;
+        _CardSlot.gameObject.SetActive(true);
+        return _CardSlot.sprite;
     }
 
     public void ReduceAngelHealth(float damage)

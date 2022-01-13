@@ -20,6 +20,19 @@ public class SceneManagerScript : MonoBehaviour
         SceneManager.LoadScene(name);
         Time.timeScale = 1;
     }
+    public void SwitchToMap(int lvl)
+    {
+        Time.timeScale = 1;
+        
+        if (lvl == 1)
+        {
+            SceneManager.LoadScene("Map-1");
+        }
+        else if (lvl == 2)
+        {
+            SceneManager.LoadScene("Map-2");
+        }
+    }
     
     public void PauseScene(GameObject pauseMenu)
     {
