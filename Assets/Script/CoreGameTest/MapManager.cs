@@ -161,7 +161,7 @@ public class MapManager : MonoBehaviour
     private void AddGold(double value)
     {
         _totalGold += value;
-        GoldInfo.text = $"Gold: { _totalGold.ToString("0") }";
+        GoldInfo.text = $"{ _totalGold.ToString("0") }";
     }
 
     // Menampilkan seluruh Tower yang tersedia pada UI Tower Selection
